@@ -1,5 +1,5 @@
 public class kendaraan {
-    
+
     String platNomor;
     String jenis;
     String merk;
@@ -9,7 +9,6 @@ public class kendaraan {
     }
 
     kendaraan(String platNomor, String jenis,String merk){
-        this.platNomor=platNomor;
         this.platNomor=platNomor;
         this.jenis=jenis;
         this.merk=merk;
