@@ -1,20 +1,66 @@
 public class linkedListAntrian {
 
-    //Class ini digunakan utk struktur linked list antrian kendaraan
+        Node head;
+        Node tail;
+        int size = 0;
 
-    //attribut head, tail, size
-    //kerjakan disini
+        
+        static class Node {
+            String data;
+            Node next;
 
-    //method tambahAntrian
-    //kerjakan disini
+            Node(String data) {
+                this.data = data;
+                this.next = null;
+            }
+        }
 
-    //method tampilkanAntrian
-    //kerjakan disini
+        public void tambahAntrian(String kendaraan) {
+            Node newNode = new Node(kendaraan);
+            if (head == null) {
+                head = tail = newNode;
+            } else {
+                tail.next = newNode;
+                tail = newNode;
+            }
+            size++;
+        }
 
-    //method getSize
-    //kerjakan disini
+       
+        public void tampilkanAntrian() {
+            if (head == null) {
+                System.out.println("Antrian kosong.");
+                return;
+            }
+            Node current = head;
+            System.out.print("Antrian: ");
+            while (current != null) {
+                System.out.print(current.data);
+                if (current.next != null) System.out.print(" -> ");
+                current = current.next;
+            }
+            System.out.println();
+        }
 
-    //method layaniKendaraan
-    //kerjakan disini
+     
+        public int getSize() {
+            return size;
+        }
+
+       
+        public String layaniKendaraan() {
+            if (head == null) {
+                System.out.println("Tidak ada kendaraan dalam antrian.");
+                return null;
+            }
+            String kendaraanDilayani = head.data;
+            head = head.next;
+            if (head == null) {
+                tail = null;
+            }
+            size--;
+            return kendaraanDilayani;
+        }
+
 
 }

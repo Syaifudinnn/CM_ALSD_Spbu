@@ -1,14 +1,22 @@
 public class kendaraan {
+    
+    String platNomor;
+    String jenis;
+    String merk;
 
-    //Class ini digunakan utk menyimpan data kendaraan
+    kendaraan(){
 
-    //attribut platNomor, jenis, merk
-    //kerjakan disini
+    }
 
-    //konstruktor
-    //kerjakan disini
+    kendaraan(String platNomor, String jenis,String merk){
+        this.platNomor=platNomor;
+        this.platNomor=platNomor;
+        this.jenis=jenis;
+        this.merk=merk;
+    }
 
-    //method tampil
-    //kerjakan disini
 
+    void tampilinformasi() {
+         System.out.println(platNomor + " - " + jenis + " - " + merk);
+    }
 }
