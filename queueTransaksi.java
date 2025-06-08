@@ -1,17 +1,32 @@
 public class queueTransaksi {
-    
-    //Class ini digunakan utk menyimpan riwayat transaksi
+    transaksi[] data;
+    int front = 0, rear = -1, size = 0, capacity;
 
-    //attribut queue, front, rear, size, capacity
-    //kerjakan disini
+    public queueTransaksi(int kapasitas) {
+        capacity = kapasitas;
+        data = new transaksi[kapasitas];
+    }
 
-    //konstruktor
-    //kerjakan disini
+    public void enqueue(transaksi t) {
+        if (size == capacity) {
+            System.out.println("Riwayat transaksi penuh!");
+            return;
+        }
+        rear = (rear + 1) % capacity;
+        data[rear] = t;
+        size++;
+        System.out.println(">> Transaksi berhasil dicatat.");
+    }
 
-    //method enqueue
-    //kerjakan disini
-
-    //method tampilkanTransaksi
-    //kerjakan disini
-
+    public void tampilkanTransaksi() {
+        if (size == 0) {
+            System.out.println("-- Riwayat kosong --");
+            return;
+        }
+        System.out.println("-- Riwayat Transaksi --");
+        for (int i = 0; i < size; i++) {
+            int index = (front + i) % capacity;
+            data[index].tampil();
+        }
+    }
 }
