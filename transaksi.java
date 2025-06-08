@@ -1,17 +1,20 @@
 public class transaksi {
-    
-    //Class ini digunakan utk menyimpan data transaksi bbm
+    String platNomor, jenisBBM;
+    double hargaPerLiter;
+    int jumlahLiter;
 
-    //attribut platNomor, jenisBBM, hargaPerLiter, jumlahLiter
-    //kerjakan disini
+    public transaksi(String platNomor, String jenisBBM, double hargaPerLiter, int jumlahLiter) {
+        this.platNomor = platNomor;
+        this.jenisBBM = jenisBBM;
+        this.hargaPerLiter = hargaPerLiter;
+        this.jumlahLiter = jumlahLiter;
+    }
 
-    //konstruktor
-    //kerjakan disini
+    public double totalBayar() {
+        return hargaPerLiter * jumlahLiter;
+    }
 
-    //method totalBayar
-    //kerjakan disini
-
-    //method tampil
-    //kerjakan disini
-
+    public void tampil() {
+        System.out.printf("%s: Rp %.1f\n", platNomor, totalBayar());
+    }
 }
