@@ -16,6 +16,6 @@ public class kendaraan {
 
 
     void tampilinformasi() {
-         System.out.println(platNomor + " - " + jenis + " - " + merk);
+         System.out.println(">> " + platNomor + " - " + jenis + " - " + merk);
     }
 }

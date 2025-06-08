@@ -3,24 +3,12 @@ public class linkedListAntrian {
     //Class ini digunakan utk struktur linked list antrian kendaraan
 
     //attribut head, tail, size
-    Node head;
-    Node tail;
+    nodeKendaraan head, tail;
     int size = 0;
-
-    // Node class untuk linked list
-    static class Node {
-        kendaraan data;
-        Node next;
-
-        public Node(kendaraan data) {
-            this.data = data;
-            this.next = null;
-        }
-    }
 
     //method tambahAntrian
     public void tambahAntrian(kendaraan data) {
-        Node newNode = new Node(data);
+        nodeKendaraan newNode = new nodeKendaraan(data);
         if (head == null) {
             head = tail = newNode;
         } else {
@@ -36,14 +24,12 @@ public class linkedListAntrian {
             System.out.println("Antrian kosong.");
             return;
         }
-        Node current = head;
-        System.out.print("Antrian: ");
+        nodeKendaraan current = head;
+        System.out.println("Antrian : ");
         while (current != null) {
-            System.out.print(current.data);
-            if (current.next != null) System.out.print(" -> ");
+            current.data.tampilinformasi();
             current = current.next;
         }
-        System.out.println();
     }
 
     //method getSize
@@ -52,18 +38,18 @@ public class linkedListAntrian {
     }
 
     //method layaniKendaraan
-    public String layaniKendaraan() {
+    public kendaraan layaniKendaraan() {
         if (head == null) {
             System.out.println("Tidak ada kendaraan dalam antrian.");
             return null;
         }
-        String kendaraanDilayani = head.data.toString();
+        kendaraan data = head.data;
         head = head.next;
         if (head == null) {
             tail = null;
         }
         size--;
-        return kendaraanDilayani;
+        return data;
     }
 
 }
